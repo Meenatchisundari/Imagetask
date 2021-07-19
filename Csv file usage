@@ -1,0 +1,16 @@
+import pandas as pd
+import csv
+df=pd.read_csv('C:/Users/ASUS/Downloads/AI Team task 02.csv')
+with open('C:/Users/ASUS/Downloads/AI Team task 02.csv') as csv_file:
+    csv_reader = csv.reader(csv_file, delimiter = ',') 
+    list_of_column_names = [] 
+    for row in csv_reader: 
+        list_of_column_names.append(row) 
+        break
+print("List of headers : ", 
+      list_of_column_names[0])
+print(df['Name of the interviewee'])
+data=pd.read_csv('C:/Users/ASUS/Downloads/AI Team task 02.csv')
+data["Communication Details"].fillna("-",inplace=True)
+data.to_csv('AI2')
+print(data.rename({'Interviewee name':'Name of the Interviewee','Communication means':'Means of Communication'}))
